@@ -4,6 +4,7 @@ import pydantic_models
 import config
 import fastapi
 
+
 api = fastapi.FastAPI()
 
 
