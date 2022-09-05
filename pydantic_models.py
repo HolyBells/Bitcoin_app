@@ -4,12 +4,12 @@ from datetime import datetime
 
 class User(pydantic.BaseModel):
     id: int
-    tg_ID:  int
-    nick:   str = None
+    tg_ID: int
+    nick: str = None
     create_date: datetime
     wallet: 'Wallet'
     sended_transactions: list['Transaction'] = None
-    received_transactions:  list['Transaction'] = None
+    received_transactions: list['Transaction'] = None
 
 
 class Transaction(pydantic.BaseModel):
@@ -35,3 +35,21 @@ class Wallet(pydantic.BaseModel):
     address: str
     sended_transactions: list[Transaction] = []
     received_transactions: list[Transaction] = []
+
+
+class User_to_update(pydantic.BaseModel):
+    id: int
+    tg_ID: int = None
+    nick: str = None
+    create_date: datetime = None
+    wallet: 'Wallet' = None
+
+
+class User_to_create(pydantic.BaseModel):
+    tg_ID: int = None
+    nick: str = None
+
+
+class Create_Transaction(pydantic.BaseModel):
+    receiver_address: str
+    amount_btc_without_fee: float
