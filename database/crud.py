@@ -1,9 +1,8 @@
 import datetime
-
 import config
 import pydantic_models
-import models
 import bit
+from db import *
 
 wallet = bit.PrivateKeyTestnet(config.test)  # наш кошелек готов и содержится в переменной wallet
 print(f"Баланс: {wallet.get_balance()}")
