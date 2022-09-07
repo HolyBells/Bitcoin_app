@@ -94,11 +94,15 @@ users = config.fake_database['users']
 def all_users(message):
     text = f'Юзеры:'
     inline_markup = telebot.types.InlineKeyboardMarkup()  # создаем объект с инлайн-разметкой
+    p = 0
     for user in users:  # в цикле создаем 3 кнопки и добавляем их поочередно в нашу разметку
+        if p == 4:
+            break
         inline_markup.add(telebot.types.InlineKeyboardButton(text=f'Юзер: {user["name"]}',
                                                              callback_data=f"user_{user['id']}"))
         # так как мы добавляем кнопки по одной, то у нас юзеры будут в 3 строчки
         # в коллбеке у нас будет текст, который содержит айди юзеров
+        p += 1
     bot.send_message(message.chat.id, text,
                      reply_markup=inline_markup)  # прикрепляем нашу разметку к ответному сообщению
 
