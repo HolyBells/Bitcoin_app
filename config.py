@@ -1,6 +1,7 @@
 test = 'cVmQ6a35xzXUbQCDkHnUZkvAJXvVJqbpq8FK1wGTwmHRdm8eaQZm'
 bot_token = '5405161917:AAHs_QGui9H790udMZjg6DHT7m7wUHRMhFs'
 tg_admin_id  = 1107135808
+api_url = "http://127.0.0.1:8000"
 
 fake_database = {'users': [
     {
